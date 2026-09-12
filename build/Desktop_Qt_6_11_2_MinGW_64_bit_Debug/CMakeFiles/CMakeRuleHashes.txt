@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+847264d33b7cd2e56449098cb2125c69 CMakeFiles/TetrisQT_autogen
+aab3906d8242ac22e2c93099a7f5403e TetrisQT_autogen/timestamp

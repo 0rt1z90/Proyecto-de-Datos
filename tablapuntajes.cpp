@@ -33,15 +33,16 @@ void guardarPuntajesEnArchivo(TablaPuntajes tabla, std::string rutaArchivo) {
 bool calificaParaTabla(TablaPuntajes tabla, int puntos) {
     if(tabla.cantidad < MAXIMO_PUNTAJES){
         return true;
-    }else{
-        int cantidad = tabla.cantidad;
+    }
 
-        if(puntos > tabla.registros[cantidad - 1].puntos ){
-            return true;
-        }else{
-            return false;
+    int indiceMinimo = 0;
+    for(int i = 1; i < tabla.cantidad; i++){
+        if(tabla.registros[i].puntos < tabla.registros[indiceMinimo].puntos){
+            indiceMinimo = i;
         }
     }
+
+    return puntos > tabla.registros[indiceMinimo].puntos;
 }
 
 void agregarRegistroPuntaje(TablaPuntajes &tabla, RegistroPuntaje registro) {
@@ -49,7 +50,13 @@ void agregarRegistroPuntaje(TablaPuntajes &tabla, RegistroPuntaje registro) {
         tabla.registros[tabla.cantidad] = registro;
         tabla.cantidad++;
     }else{
-        tabla.registros[MAXIMO_PUNTAJES - 1] = registro;
+        int indiceMinimo = 0;
+        for(int i = 1; i < tabla.cantidad; i++){
+            if(tabla.registros[i].puntos < tabla.registros[indiceMinimo].puntos){
+                indiceMinimo = i;
+            }
+        }
+        tabla.registros[indiceMinimo] = registro;
     }
 }
 

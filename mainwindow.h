@@ -51,6 +51,7 @@ private:
     Juego juego;
     Interfaz interfaz;
     QTimer timerJuego;
+    std::string rutaArchivoPuntajes;
 
     //Tablero reutilizado solo para dibujar los pasos del replay
     Tablero tableroReplay;

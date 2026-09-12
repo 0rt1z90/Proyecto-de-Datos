@@ -1,4 +1,7 @@
 #include "mainwindow.h"
+#include "mainwindow.h"
+#include <QCoreApplication>
+#include <QDir>
 
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -7,13 +10,27 @@
 #include <QAbstractItemView>
 #include <QInputDialog>
 
+static QString encontrarCarpetaDelProyecto() {
+    QDir directorio(QCoreApplication::applicationDirPath());
+
+    //Sube carpetas hasta encontrar la que contiene una subcarpeta build
+    while(directorio.exists() && !directorio.exists("build")){
+        if(!directorio.cdUp()){
+            break;
+        }
+    }
+
+    return directorio.absolutePath();
+}
+
 MainWindow::MainWindow(QWidget *padre) : QMainWindow(padre) {
     juego = crearJuego();
     interfaz = crearInterfaz(this);
     tableroReplay = crearTablero();
 
-    cargarPuntajesDesdeArchivo(juego.tablaPuntajes, "puntajes.txt");
+    rutaArchivoPuntajes = (encontrarCarpetaDelProyecto() + "/puntajes.txt").toStdString();
 
+    cargarPuntajesDesdeArchivo(juego.tablaPuntajes, rutaArchivoPuntajes);
     setWindowTitle("TetrisQT");
     resize(760, 680);
 
@@ -38,7 +55,7 @@ MainWindow::MainWindow(QWidget *padre) : QMainWindow(padre) {
     timerJuego.start(16);
 }
 
-// Construccion de pantallas
+//Construccion de pantallas
 
 
 void MainWindow::construirPantallaInicio() {
@@ -233,7 +250,7 @@ void MainWindow::construirPantallaReplay() {
     connect(&timerReplay, &QTimer::timeout, this, &MainWindow::alTickReplay);
 }
 
-// Puente Interfaz.cpp -> widgets Qt
+//Puente Interfaz.cpp -> widgets Qt
 
 
 void MainWindow::actualizarTablero(const Tablero &tablero) {
@@ -279,17 +296,14 @@ void MainWindow::mostrarPantallaPausa() {
 
 void MainWindow::mostrarPantallaFin() {
     etiquetaPuntajeFinal->setText(QString("Puntaje: %1").arg(juego.puntajeActual));
-    guardarPuntajesEnArchivo(juego.tablaPuntajes, "puntajes.txt");
+    guardarPuntajesEnArchivo(juego.tablaPuntajes, rutaArchivoPuntajes);
     refrescarTablaMejoresPuntajes();
     pilaDePantallas->setCurrentWidget(pantallaFin);
 }
 
-void MainWindow::mostrarControlesReplay() {
-    //Los controles de replay ya estan siempre visibles en la pantalla de fin;
-    //esta funcion queda disponible por si se agrega una pantalla dedicada.
-}
+void MainWindow::mostrarControlesReplay() {}
 
-// Ciclo de juego
+//Ciclo de juego
 
 void MainWindow::refrescarPantallaJuego() {
     dibujarTablero(interfaz, juego.tablero);
@@ -309,8 +323,7 @@ void MainWindow::refrescarPantallaJuego() {
     widgetTablero->establecerDuracionCaida(duracionAnimacion);
 }
 
-//Revisa el proximo evento programado y avisa si falta poco para que dispare
-//Revisa el proximo evento programado y avisa si falta poco para que dispare
+//Revisa el proximo evento y avisa si falta poco para que dispare
 void MainWindow::actualizarAvisoEvento() {
 
     QString mensaje = "";
@@ -335,8 +348,6 @@ void MainWindow::actualizarAvisoEvento() {
         }
     }
 
-    //Solo se actualiza el label si el mensaje en verdad cambio
-    //asi se evita forzar un recalculo del layout en cada tick
     if(etiquetaAvisoEvento->text() != mensaje){
         etiquetaAvisoEvento->setText(mensaje);
     }
@@ -394,12 +405,12 @@ void MainWindow::keyPressEvent(QKeyEvent *evento) {
     QMainWindow::keyPressEvent(evento);
 }
 
-// Slots de botones
+//Slots de botones
 
 void MainWindow::alPresionarJugar() {
     juego = crearJuego();
     inicializarJuego(juego);
-    cargarPuntajesDesdeArchivo(juego.tablaPuntajes, "puntajes.txt");
+    cargarPuntajesDesdeArchivo(juego.tablaPuntajes, rutaArchivoPuntajes);
     pilaDePantallas->setCurrentWidget(pantallaJuego);
     refrescarPantallaJuego();
     this->setFocus();
@@ -414,7 +425,7 @@ void MainWindow::alPresionarContinuar() {
 void MainWindow::alPresionarReiniciar() {
     juego = crearJuego();
     inicializarJuego(juego);
-    cargarPuntajesDesdeArchivo(juego.tablaPuntajes, "puntajes.txt");
+    cargarPuntajesDesdeArchivo(juego.tablaPuntajes, rutaArchivoPuntajes);
     pilaDePantallas->setCurrentWidget(pantallaJuego);
     refrescarPantallaJuego();
     this->setFocus();
