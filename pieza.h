@@ -4,7 +4,6 @@
 //Tipos de pieza del tetris clasico
 enum TipoPieza { PIEZA_I, PIEZA_O, PIEZA_T, PIEZA_S, PIEZA_Z, PIEZA_J, PIEZA_L };
 
-//Una casilla ocupada dentro de la forma de la pieza
 struct Bloque {
     int fila;
     int columna;
