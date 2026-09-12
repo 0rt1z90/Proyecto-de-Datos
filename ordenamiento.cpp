@@ -4,8 +4,8 @@ void ordenamientoInsercion(RegistroPuntaje arreglo[], int cantidad) {
 
     for(int i = 1; i < cantidad; i++){
         RegistroPuntaje aux = arreglo[i];
-        int j = i -1;
-        while(j >= 0 && arreglo[j].puntos > aux.puntos){
+        int j = i - 1;
+        while(j >= 0 && arreglo[j].puntos < aux.puntos){
             arreglo[j + 1] = arreglo[j];
             j--;
         }

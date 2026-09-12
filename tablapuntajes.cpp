@@ -51,8 +51,6 @@ void agregarRegistroPuntaje(TablaPuntajes &tabla, RegistroPuntaje registro) {
     }else{
         tabla.registros[MAXIMO_PUNTAJES - 1] = registro;
     }
-
-    ordenamientoInsercion(tabla.registros, tabla.cantidad);
 }
 
 //Reordena la tabla completa con el algoritmo que el usuario elija en la pantalla de fin
@@ -64,4 +62,15 @@ void mostrarTablaPuntajes(TablaPuntajes tabla) {
     for(int i = 0; i < tabla.cantidad; i++){
         std::cout << tabla.registros[i].nombreJugador << " " << tabla.registros[i].puntos << std::endl;
     }
+}
+
+void actualizarNombreUltimoRegistro(TablaPuntajes &tabla, std::string nombreNuevo, int puntos) {
+
+    for(int i = 0; i < tabla.cantidad; i++){
+        if(tabla.registros[i].nombreJugador == "Jugador" && tabla.registros[i].puntos == puntos){
+            tabla.registros[i].nombreJugador = nombreNuevo;
+            return;
+        }
+    }
+
 }

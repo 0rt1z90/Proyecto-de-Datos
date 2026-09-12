@@ -18,5 +18,6 @@ bool calificaParaTabla(TablaPuntajes tabla, int puntos);
 void agregarRegistroPuntaje(TablaPuntajes &tabla, RegistroPuntaje registro);
 void ordenarTabla(TablaPuntajes &tabla, TipoAlgoritmoOrden algoritmo);
 void mostrarTablaPuntajes(TablaPuntajes tabla);
+void actualizarNombreUltimoRegistro(TablaPuntajes &tabla, std::string nombreNuevo, int puntos);
 
 #endif
