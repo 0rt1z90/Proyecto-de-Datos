@@ -4,8 +4,8 @@
 #include <string>
 
 struct RegistroPuntaje {
-    std::string nombreJugador;
-    int puntos;
+	std::string nombreJugador;
+	int puntos;
 };
 
 #endif

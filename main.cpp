@@ -1,15 +1,21 @@
-#include <QApplication>
-#include <ctime>
 #include <cstdlib>
-#include "mainwindow.h"
+#include <ctime>
+#include <cstdio>
 
-int main(int argc, char *argv[]) {
-    srand((unsigned int)time(nullptr));
+#include "VentanaJuego.h"
 
-    QApplication app(argc, argv);
-
-    MainWindow ventana;
-    ventana.show();
-
-    return app.exec();
+int main() {
+	srand((unsigned int)time(nullptr));
+	
+	VentanaJuego ventana = crearVentanaJuego();
+	
+	if(inicializarVentana(ventana) == false){
+		fprintf(stderr, "No se pudo inicializar Allegro.\n");
+		return 1;
+	}
+	
+	ejecutarVentana(ventana);
+	destruirVentana(ventana);
+	
+	return 0;
 }

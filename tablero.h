@@ -8,14 +8,14 @@ const int FILAS_TABLERO = 20;
 
 //Nodo de la lista enlazada que representa una fila del tablero
 struct NodoFila {
-    Fila dato;
-    NodoFila* siguiente;
+	Fila dato;
+	NodoFila* siguiente;
 };
 
 //Tablero representado como lista enlazada de filas
 struct Tablero {
-    NodoFila* primeraFila;
-    int cantidadFilas;
+	NodoFila* primeraFila;
+	int cantidadFilas;
 };
 
 Tablero crearTablero();

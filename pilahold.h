@@ -5,8 +5,8 @@
 
 //Pila propia de capacidad 1 para la pieza en espera
 struct PilaHold {
-    Pieza piezaGuardada;
-    bool ocupada;
+	Pieza piezaGuardada;
+	bool ocupada;
 };
 
 PilaHold crearPilaHold();

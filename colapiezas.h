@@ -5,14 +5,14 @@
 
 //Nodo de la cola enlazada de piezas futuras
 struct NodoPieza {
-    Pieza dato;
-    NodoPieza* siguiente;
+	Pieza dato;
+	NodoPieza* siguiente;
 };
 
 struct ColaPiezas {
-    NodoPieza* frente;
-    NodoPieza* final;
-    int cantidad;
+	NodoPieza* frente;
+	NodoPieza* final;
+	int cantidad;
 };
 
 ColaPiezas crearColaPiezas();

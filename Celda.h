@@ -2,8 +2,8 @@
 #define CELDA_H
 
 struct Celda {
-    bool ocupada;
-    int colorPieza;
+	bool ocupada;
+	int colorPieza;
 };
 
 #endif

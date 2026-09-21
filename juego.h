@@ -15,18 +15,18 @@ enum TeclaJuego { TECLA_IZQUIERDA, TECLA_DERECHA, TECLA_ROTAR, TECLA_BAJAR, TECL
 
 //Coordina todas las estructuras y la logica general de la partida
 struct Juego {
-    Tablero tablero;
-    ColaPiezas colaPiezas;
-    PilaHold pilaHold;
-    ListaHistorial historial;
-    ColaEventos eventos;
-    TablaPuntajes tablaPuntajes;
-
-    Pieza piezaActual;
-    EstadoJuego estadoActual;
-    int puntajeActual;
-    float tiempoTranscurrido;
-    float intervaloCaida;
+	Tablero tablero;
+	ColaPiezas colaPiezas;
+	PilaHold pilaHold;
+	ListaHistorial historial;
+	ColaEventos eventos;
+	TablaPuntajes tablaPuntajes;
+	
+	Pieza piezaActual;
+	EstadoJuego estadoActual;
+	int puntajeActual;
+	float tiempoTranscurrido;
+	float intervaloCaida;
 };
 
 Juego crearJuego();

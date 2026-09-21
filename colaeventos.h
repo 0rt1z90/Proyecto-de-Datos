@@ -5,13 +5,13 @@
 
 //Nodo de la cola de eventos ordenada por tiempo de disparo
 struct NodoEvento {
-    EventoJuego dato;
-    NodoEvento* siguiente;
+	EventoJuego dato;
+	NodoEvento* siguiente;
 };
 
 struct ColaEventos {
-    NodoEvento* frente;
-    int cantidad;
+	NodoEvento* frente;
+	int cantidad;
 };
 
 ColaEventos crearColaEventos();

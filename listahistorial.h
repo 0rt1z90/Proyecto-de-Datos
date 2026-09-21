@@ -5,16 +5,16 @@
 
 //Nodo de la lista doblemente enlazada de movimientos
 struct NodoHistorial {
-    Movimiento dato;
-    NodoHistorial* anterior;
-    NodoHistorial* siguiente;
+	Movimiento dato;
+	NodoHistorial* anterior;
+	NodoHistorial* siguiente;
 };
 
 struct ListaHistorial {
-    NodoHistorial* primero;
-    NodoHistorial* ultimo;
-    NodoHistorial* actual;
-    int cantidad;
+	NodoHistorial* primero;
+	NodoHistorial* ultimo;
+	NodoHistorial* actual;
+	int cantidad;
 };
 
 ListaHistorial crearListaHistorial();

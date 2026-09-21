@@ -3,18 +3,13 @@
 
 #include "Juego.h"
 
-//Declaracion adelantada: MainWindow es quien realmente dibuja con Qt
-//(ver mainwindow.h/.cpp). Interfaz.h no puede incluir mainwindow.h porque
-//mainwindow.h necesita incluir Juego.h/Interfaz.h, y se generaria un ciclo.
-class MainWindow;
+struct VentanaJuego;
 
-//Encargada de dibujar todos los elementos graficos del juego.
-//Es solo un puente: guarda un puntero a la ventana Qt real y delega ahi.
 struct Interfaz {
-    MainWindow *ventana;
+	VentanaJuego *ventana;
 };
 
-Interfaz crearInterfaz(MainWindow *ventana);
+Interfaz crearInterfaz(VentanaJuego *ventana);
 void dibujarTablero(Interfaz &interfaz, Tablero tablero);
 void dibujarPiezaActual(Interfaz &interfaz, Pieza pieza);
 void dibujarSiguientesPiezas(Interfaz &interfaz, ColaPiezas colaPiezas);

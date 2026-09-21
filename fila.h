@@ -6,7 +6,7 @@
 const int COLUMNAS_TABLERO = 10;
 
 struct Fila {
-    Celda celdas[COLUMNAS_TABLERO];
+	Celda celdas[COLUMNAS_TABLERO];
 };
 
 Fila crearFilaVacia();

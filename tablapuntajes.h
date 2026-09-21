@@ -7,8 +7,8 @@
 const int MAXIMO_PUNTAJES = 10;
 
 struct TablaPuntajes {
-    RegistroPuntaje registros[MAXIMO_PUNTAJES];
-    int cantidad;
+	RegistroPuntaje registros[MAXIMO_PUNTAJES];
+	int cantidad;
 };
 
 TablaPuntajes crearTablaPuntajes();

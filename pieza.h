@@ -5,15 +5,15 @@
 enum TipoPieza { PIEZA_I, PIEZA_O, PIEZA_T, PIEZA_S, PIEZA_Z, PIEZA_J, PIEZA_L };
 
 struct Bloque {
-    int fila;
-    int columna;
+	int fila;
+	int columna;
 };
 
 struct Pieza {
-    TipoPieza tipo;
-    int rotacionActual;
-    int filaPivote;
-    int columnaPivote;
+	TipoPieza tipo;
+	int rotacionActual;
+	int filaPivote;
+	int columnaPivote;
 };
 
 Pieza crearPieza(TipoPieza tipo);

@@ -5,8 +5,8 @@
 enum TipoEvento { EVENTO_AUMENTAR_VELOCIDAD, EVENTO_PIEZA_ESPECIAL, EVENTO_LIMPIAR_FILA };
 
 struct EventoJuego {
-    TipoEvento tipo;
-    float tiempoDisparo;
+	TipoEvento tipo;
+	float tiempoDisparo;
 };
 
 #endif

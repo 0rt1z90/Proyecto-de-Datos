@@ -9,11 +9,11 @@ enum TipoMovimiento { MOV_IZQUIERDA, MOV_DERECHA, MOV_ROTAR, MOV_BAJAR, MOV_COLO
 
 //Guarda una foto completa del estado antes y despues del movimiento
 struct Movimiento {
-    TipoMovimiento tipo;
-    Pieza piezaAntes;
-    Pieza piezaDespues;
-    Fila tableroAntes[FILAS_TABLERO];
-    Fila tableroDespues[FILAS_TABLERO];
+	TipoMovimiento tipo;
+	Pieza piezaAntes;
+	Pieza piezaDespues;
+	Fila tableroAntes[FILAS_TABLERO];
+	Fila tableroDespues[FILAS_TABLERO];
 };
 
 #endif
