@@ -1,0 +1,53 @@
+commit 506e1380e0049f4cbc99d2405025b876dba08cf5
+Author: 0rt1z90 <kendallortizaguilar@gmail.com>
+Date:   Mon Sep 21 15:47:41 2026 -0600
+
+    Se cambio el apartado grafico de QT a Allegro
+
+commit d60a83e44702d1cb31e7875687cc047ab458c03f
+Author: 0rt1z90 <kendallortizaguilar@gmail.com>
+Date:   Sun Sep 20 21:10:21 2026 -0600
+
+    Ultimas mejoras
+
+commit d47ac2d768951d95b81792183a15092f0a1f1e9f
+Author: 0rt1z90 <kendallortizaguilar@gmail.com>
+Date:   Sat Sep 12 13:22:20 2026 -0600
+
+    Se agrego el uso de QT correctamente
+
+commit cf613248b84a2ad0bc591f84443dcccebd98cf1f
+Author: 0rt1z90 <kendallortizaguilar@gmail.com>
+Date:   Sat Sep 12 12:16:02 2026 -0600
+
+    Creacion de la interfaz grafica y se añadio el replay
+
+commit d3d59a2ce4b8d3f5e2e05b875a5a0db398b07bc5
+Author: 0rt1z90 <kendallortizaguilar@gmail.com>
+Date:   Fri Sep 11 19:19:26 2026 -0600
+
+    Se agrego la logica principal del juego
+
+commit 71c11ff1ef2a0a4551beb97835c25f8c4a85ba67
+Author: 0rt1z90 <kendallortizaguilar@gmail.com>
+Date:   Fri Sep 11 12:56:52 2026 -0600
+
+    Creacion de la cola de piezas y pilaHold
+
+commit bc8b9821f0c0e348aee5b7403ffa9ade8563dc54
+Author: 0rt1z90 <kendallortizaguilar@gmail.com>
+Date:   Tue Sep 8 16:32:48 2026 -0600
+
+    Se agregaron eventos
+
+commit 111c9e5f6d2fab65bd602b46c85791bd2b95019a
+Author: 0rt1z90 <kendallortizaguilar@gmail.com>
+Date:   Mon Sep 7 12:14:39 2026 -0600
+
+    Creacion de los puntajes
+
+commit d6c6da99e07d27a653cb368e3b1d7596fe764580
+Author: 0rt1z90 <kendallortizaguilar@gmail.com>
+Date:   Thu Sep 3 10:22:35 2026 -0600
+
+    Creacion de las piezas, filas y celda

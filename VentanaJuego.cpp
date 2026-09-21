@@ -280,7 +280,6 @@ static void procesarTeclaJuego(VentanaJuego &ventana, int codigoTecla) {
 	
 	actualizarTrasCambioJuego(ventana);
 }
-
 static void procesarEventoTeclado(VentanaJuego &ventana, const ALLEGRO_EVENT &evento) {
 	
 	if(ventana.pantalla == PANTALLA_INGRESO_NOMBRE){
@@ -307,11 +306,16 @@ static void procesarEventoTeclado(VentanaJuego &ventana, const ALLEGRO_EVENT &ev
 		return;
 	}
 	
+	if(ventana.pantalla == PANTALLA_PAUSA && evento.keyboard.keycode == ALLEGRO_KEY_ESCAPE){
+		ventana.juego.estadoActual = ESTADO_JUGANDO;
+		ventana.pantalla = PANTALLA_JUEGO;
+		return;
+	}
+	
 	if(ventana.pantalla == PANTALLA_JUEGO && ventana.juego.estadoActual == ESTADO_JUGANDO){
 		procesarTeclaJuego(ventana, evento.keyboard.keycode);
 	}
 }
-
 static void procesarClick(VentanaJuego &ventana, float x, float y) {
 	
 	switch(ventana.pantalla){
@@ -481,7 +485,13 @@ void actualizarTablero(VentanaJuego &ventana, const Tablero &tablero) {
 }
 
 void actualizarPiezaActual(VentanaJuego &ventana, const Pieza &pieza) {
-	establecerPiezaActualAnim(ventana.animPieza, pieza, ventana.juego.estadoActual == ESTADO_JUGANDO);
+	bool hayPieza = false;
+	
+	if(ventana.juego.estadoActual == ESTADO_JUGANDO || ventana.juego.estadoActual == ESTADO_PAUSA){
+		hayPieza = true;
+	}
+	
+	establecerPiezaActualAnim(ventana.animPieza, pieza, hayPieza);
 }
 
 void actualizarSiguientesPiezas(VentanaJuego &ventana, const ColaPiezas &colaPiezas) {

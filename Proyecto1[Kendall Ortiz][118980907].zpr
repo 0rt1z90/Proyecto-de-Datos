@@ -15,7 +15,7 @@ tab_width=4
 tab_use_spaces=0
 explorer_path=.
 inherits_from=
-current_source=Interfaz.h
+current_source=VentanaJuego.cpp
 path_char=\
 [source]
 path=main.cpp
@@ -71,7 +71,7 @@ cursor=163:1
 open=true
 [source]
 path=VentanaJuego.cpp
-cursor=477:71
+cursor=317:1
 open=true
 [header]
 path=Pieza.h
