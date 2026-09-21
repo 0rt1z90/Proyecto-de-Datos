@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-07633266be0109c5fae0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "TetrisQT",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "TetrisQT::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TetrisQT-Release-37b07cedacca1b06b9e9.json",
+					"name" : "TetrisQT",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TetrisQT_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TetrisQT_autogen-Release-add247a92b41afda6020.json",
+					"name" : "TetrisQT_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TetrisQT_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TetrisQT_autogen_timestamp_deps-Release-b8b6d3e344a09871c2d5.json",
+					"name" : "TetrisQT_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/kenda/Desktop/Ciclo 2 (2026)/Estructuras de Datos/Proyectico/Proyecto-de-Datos/build/Desktop_Qt_6_11_2_MinGW_64_bit_Release",
+		"source" : "C:/Users/kenda/Desktop/Ciclo 2 (2026)/Estructuras de Datos/Proyectico/Proyecto-de-Datos"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

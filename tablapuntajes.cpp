@@ -2,6 +2,8 @@
 #include "Ordenamiento.h"
 #include <iostream>
 #include <fstream>
+#include <QDebug>
+
 
 TablaPuntajes crearTablaPuntajes() {
     TablaPuntajes tabla;

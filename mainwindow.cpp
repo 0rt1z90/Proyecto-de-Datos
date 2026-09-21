@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "mainwindow.h"
 #include <QCoreApplication>
+#include <QStandardPaths>
 #include <QDir>
 
 #include <QVBoxLayout>
@@ -10,25 +11,15 @@
 #include <QAbstractItemView>
 #include <QInputDialog>
 
-static QString encontrarCarpetaDelProyecto() {
-    QDir directorio(QCoreApplication::applicationDirPath());
-
-    //Sube carpetas hasta encontrar la que contiene una subcarpeta build
-    while(directorio.exists() && !directorio.exists("build")){
-        if(!directorio.cdUp()){
-            break;
-        }
-    }
-
-    return directorio.absolutePath();
-}
-
 MainWindow::MainWindow(QWidget *padre) : QMainWindow(padre) {
     juego = crearJuego();
     interfaz = crearInterfaz(this);
     tableroReplay = crearTablero();
 
-    rutaArchivoPuntajes = (encontrarCarpetaDelProyecto() + "/puntajes.txt").toStdString();
+    QString carpetaDatos = QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation);
+    QDir().mkpath(carpetaDatos);
+
+    rutaArchivoPuntajes = (carpetaDatos + "/puntajes.txt").toStdString();
 
     cargarPuntajesDesdeArchivo(juego.tablaPuntajes, rutaArchivoPuntajes);
     setWindowTitle("TetrisQT");
